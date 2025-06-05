@@ -243,58 +243,55 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('user-email').textContent     = email;
     document.getElementById('account-status').textContent = accountStatus;
 
-    // 3) Generar la lista de personajes siempre limpia
-    characters = [
-        {
-        name: "Thrall", location: "Orgrimmar", level: 80,
-        honor: 1200, arena: 800, achievements: 5200,
-        class: "Guerrero",
-        raceIcon: "assets/icons/race/orc-male.png",
-        classIcon: "assets/icons/class/warrior.png",
-        factionIcon: "assets/icons/horde.png",
-        faction: "Horda"
-        },
-        {
-        name: "Jaina", location: "Dalaran", level: 80,
-        honor: 950, arena: 650, achievements: 4800,
-        class: "Mago",
-        raceIcon: "assets/icons/race/human-female.png",
-        classIcon: "assets/icons/class/mage.png",
-        factionIcon: "assets/icons/alliance.png",
-        faction: "Alianza"
+    // 3) Pedir al servidor la lista real de personajes
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        fetchCharacters(loggedInUser);
+    }
+
+    }
+
+    // Función para obtener y mostrar personajes desde el servidor
+    async function fetchCharacters(username) {
+        try {
+            // 1) Llamar al endpoint con el username
+            const res = await fetch(`/api/characters?username=${encodeURIComponent(username)}`);
+            if (!res.ok) {
+                console.error('Error al obtener personajes:', res.statusText);
+                return;
+            }
+            const { characters: charRows } = await res.json();
+
+            // 2) Vaciar el contenedor de personajes
+            const container = document.getElementById('character-list');
+            container.innerHTML = '';
+
+            // 3) Crear y agregar una tarjeta por cada personaje
+            charRows.forEach(char => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'col-12 col-md-6';
+                wrapper.innerHTML = `
+                    <div class="character-card">
+                        <div class="card-center">
+                            <h4 class="char-name">${char.name}</h4>
+                            <p class="char-info">Nivel: <strong>${char.level}</strong></p>
+                        </div>
+                    </div>`;
+                container.appendChild(wrapper);
+            });
+
+            // 4) Reconstruir los selectores de personajes para tienda y opciones
+            characters = charRows.map(c => ({
+                name: c.name,
+                raceIcon: '',   // <— si agregas íconos, podrás asignarlos aquí luego
+                classIcon: '',
+                factionIcon: '',
+                faction: ''
+            }));
+            renderCharacterSelectors();
+        } catch (err) {
+            console.error('fetchCharacters error:', err);
         }
-    ];
-    selectedCharacterName = characters[0].name;
-    const characterList = document.getElementById('character-list');
-    characterList.innerHTML = '';  // Borra lo anterior
-
-    characters.forEach(char => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'col-12 col-md-6';  // 1 tarjeta en xs, 2 en md+
-        wrapper.innerHTML = `
-            <div class="character-card">
-                <div class="card-side-left">
-                    <img src="${char.raceIcon}" alt="Raza ${char.name}" class="icon-race">
-                </div>
-                <div class="card-center">
-                    <h4 class="char-name">${char.name}</h4>
-                    <p class="char-info">Nivel: <strong>${char.level}</strong></p>
-                    <p class="char-info">Ubicación: <strong>${char.location}</strong></p>
-                    <p class="char-info">Oro: <strong>${char.gold ?? 0}</strong> <img src="assets/icons/coin.png" alt="Oro" class="icon-small"></p>
-                    <p class="char-info">Puntos de Honor: <strong>${char.honor}</strong> <img src="assets/images/honor.png" alt="Honor" class="icon-small"></p>
-                    <p class="char-info">Puntos de Arena: <strong>${char.arena}</strong> <img src="assets/images/arena.png" alt="Arena" class="icon-small"></p>
-                </div>
-                <div class="card-side-right">
-                    <img src="${char.classIcon}" alt="Clase ${char.name}" class="icon-class">
-                    <img src="${char.factionIcon}" alt="Facción ${char.name}" class="icon-faction">
-                </div>
-            </div>
-        `;
-        characterList.appendChild(wrapper);
-    });
-    // 3.1) Rellenar los selects de personaje
-    renderCharacterSelectors();  
-
     }
 
     function resetShopFilters() {
