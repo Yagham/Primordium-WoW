@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 3) Primera fase SRP: solicitar salt y B al servidor
                 const startRes = await fetch(
                     `/api/login/start?username=${encodeURIComponent(username)}`
-                    );
+                );
                 if (!startRes.ok) {
                     const err = await startRes.json();
                     alert(err.error || 'Error inicial login');
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         M1: M1
                     })
                 });
-                    if (!finishRes.ok) {
+                if (!finishRes.ok) {
                     const err2 = await finishRes.json();
                     alert(err2.error || 'Error al validar login');
                     return;
