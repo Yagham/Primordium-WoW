@@ -1,0 +1,51 @@
+{
+  "Armas": {
+    "PVE": {
+      "Armas de una Mano": ["Dagas", "Armas de Puño", "Hachas", "Mazas", "Espadas"],
+      "Armas de dos Manos": ["Armas de Asta", "Bastones", "Hachas", "Mazas", "Espadas"],
+      "Armas a Distancia": ["Arcos", "Ballestas", "Armas de Fuego", "Arrojadizas", "Varitas"]
+    },
+    "PVP": {
+      "Armas de una Mano": ["Dagas", "Armas de Puño", "Hachas", "Mazas", "Espadas"],
+      "Armas de dos Manos": ["Armas de Asta", "Bastones", "Hachas", "Mazas", "Espadas"],
+      "Armas a Distancia": ["Arcos", "Ballestas", "Armas de Fuego", "Arrojadizas", "Varitas"]
+    }
+  },
+  "Set de Armaduras": {
+    "PVE": [
+      "Brujo", 
+      "Caballero de la Muerte", 
+      "Cazador", 
+      "Chamán", 
+      "Druida", 
+      "Chamán",
+      "Guerrero",
+      "Mago",
+      "Paladín",
+      "Pícaro",
+      "Sacerdote"
+    ], 
+    "PVP": [
+      "Brujo", 
+      "Caballero de la Muerte", 
+      "Cazador", 
+      "Chamán", 
+      "Druida", 
+      "Chamán",
+      "Guerrero",
+      "Mago",
+      "Paladín",
+      "Pícaro",
+      "Sacerdote"
+    ] 
+  },
+  "Accesorios": [
+    "Collares", "Anillos", "Capa"
+  ],
+  "Contenedores": [
+    "Bolsas", "Cofres"
+  ],
+  "Monturas": [
+    "Terrestres", "Voladoras"
+  ]
+}

@@ -1,0 +1,1175 @@
+
+/* Fuente principal para párrafos, listas, formularios… */
+html, body {
+  font-family: 'Ancizar Sans', sans-serif;}
+/* Usar Grenze únicamente en encabezados y títulos grandes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Grenze', serif;
+}
+/* Usar Grenze únicamente en encabezados y títulos grandes */
+a, label {
+  font-family: 'Grenze', serif;
+}
+/* Global background image */
+body {
+    background: url('../assets/images/fondonaranjo.jpg') center/cover fixed;
+    margin: 0;
+    padding: 0;
+}
+/* Contenedor para el contenido de cada widget */
+.module-wrapper {
+    background: rgba(0, 0, 0, 0.80);       /* fondo negro semi-transp */
+    border-radius: 12px;                  /* esquinas redondeadas */
+    box-shadow:0 0 8px 8px  #e96a0961;/* sombra sutil */
+    padding: 2rem;                       /* espacio interior */
+    margin-bottom: 0;               /* separación vertical */
+    margin: 1.2rem 0;
+    max-width: 100%;
+}
+/* Contenedor para el contenido de cada sección */
+.content-wrapper {
+    /* ancho, centrado, padding, etc. que ya tienes… */
+    max-width: 100%;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 8px 8px #e96a0961;
+    background: rgba(0, 0, 0, 0.80); 
+}
+/* Quita el fondo negro y la sombra solo en la sección de inicio */
+#home > .content-wrapper {
+    max-width: 100%;    /* igual que tu .content-wrapper genérico */
+    margin: 0;     /* centrado horizontal y separación vertical */
+    padding: 0;            /* quita el padding general, los módulos ya lo tienen */
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+/* Contenedor para el contenido de cada "Mi cuenta" */
+.wrapper {
+    /* ancho, centrado, padding, etc. que ya tienes… */
+    max-width: 100%;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 8px 8px #e96a0961;
+    background: rgba(0, 0, 0, 0.80); 
+}
+.wrapper h1, .wrapper h2, .wrapper h3,
+.content-wrapper h1, .content-wrapper h2, .content-wrapper h3 {
+    color: hwb(29 21% 1%);  /* dorado para los encabezados */
+}
+.wrapper p, .wrapper li,
+.content-wrapper p, .content-wrapper li {
+    color: hsl(40, 57%, 73%);  /* gris claro para párrafos y listas */
+    font-size: 1.18rem;
+}
+/* Limita el ancho del formulario */
+.form-container {
+    max-width: 400px;   /* ajusta a lo que necesites */
+    width: 100%;        /* para que se reduzca en pantallas pequeñas */
+}
+/* Fuente específica para el formulario */
+#create-account-form {
+    color: hsl(40, 57%, 73%);  /* gris claro para párrafos y listas */
+    font-size: 1.18rem
+}
+/* Color del texto que escribe el usuario */
+#create-account-form .form-control {
+    color: hsl(40, 57%, 73%)!important; /* por ejemplo, un amarillo claro */
+    font-size: 1.18rem
+}
+/* Si quieres también cambiar el color de las etiquetas */
+#create-account-form .form-label {
+    color: hsl(40, 78%, 64%)!important; /* dorado */
+}
+/* Y si quieres que los placeholders también usen Roboto */
+#create-account-form ::placeholder {
+    opacity: 0.6;    /* opcional: hacer el placeholder un poco más tenue */
+    color: hsl(40, 57%, 73%);  /* gris claro para párrafos y listas */
+    font-size: 1.18rem
+}
+    /* Fuente específica para el formulario */
+#login-form {
+    color: hsl(40, 57%, 73%);  /* gris claro para párrafos y listas */
+    font-size: 1.18rem
+}
+/* Color del texto que escribe el usuario */
+#login-form .form-control {
+    color: hsl(40, 57%, 73%)!important; /* por ejemplo, un amarillo claro */
+    font-size: 1.18rem
+}
+/* Si quieres también cambiar el color de las etiquetas */
+#login-form .form-label {
+    color: hsl(40, 78%, 64%)!important; /* dorado */
+}
+/* Y si quieres que los placeholders también usen Roboto */
+#login-form ::placeholder {
+    opacity: 0.6;    /* opcional: hacer el placeholder un poco más tenue */
+    color: hsl(40, 57%, 73%);  /* gris claro para párrafos y listas */
+    font-size: 1.18rem
+}
+/* Borde dorado fino */
+.border-gold {
+    border-color: hwb(29 21% 1%)!important;
+}
+/* Botón dorado */
+.btn-gold {
+    background-color: hsl(40, 57%, 73%);
+    color: #000;
+    border: 2px solid #b8860b;
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+}
+.btn-gold:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px hwb(29 21% 1%);
+}
+/* Inputs al enfocar */
+.form-control:focus {
+    box-shadow: 0 0 0 0.3rem hsla(34, 89%, 38%, 0.641);
+}
+/* Navbar epic styling refined */
+.navbar {
+    background: url('../assets/images/barrita.png') no-repeat center center;
+    background-size: 100% 105px;
+    height: 110px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    backdrop-filter: blur(1.2px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.navbar-brand {
+    order: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 0 !important;
+    transition: transform 0.3s;
+}
+.navbar-toggler {
+    order: 3;
+}
+.navbar-collapse {
+    order: 2;
+    flex: 1 1 auto;
+    display: flex !important;
+    justify-content: center !important;
+}
+.navbar-nav {
+    padding-bottom: 30px;
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+.navbar-brand img {
+    width: 90px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0));
+}
+.navbar-brand:hover {
+    transform: scale(1.1);
+}
+.nav-link {
+    font-size: 1.2rem;
+    color: #eab461 !important;
+    margin: 0 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,1);
+} 
+.nav-link:hover,
+.nav-link:focus {
+    color: hwb(29 9% 0%) !important;
+    transform: scale(1.1);
+    text-shadow: 4px 4px 3px rgba(0,0,0,1);
+}  
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 0%;
+} 
+.dropdown-menu {
+    background: rgba(30,19,12,0.80);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.dropdown-item {
+    color: hsl(40, 61%, 77%);
+    transition: background 0.2s, color 0.2s;
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: rgba(100, 89, 25, 0.2);
+    color: hwb(29 9% 0%);
+}
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(1.2px);
+}
+.hero-content {
+    position: relative;
+    color: #ffd700;
+    z-index: 1;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Cinzel Decorative', serif;
+    animation: fadeInDown 2s ease-out;
+}
+.hero-logo-link .hero-logo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.hero-logo-link:hover .hero-logo {
+    transform: scale(1.02);                        /* zoom ligero */
+    filter: drop-shadow(0 0 10px #131312); /* resplandor dorado */
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+#content-sections > section {
+/* Ajusta “200px” al alto real de tu Hero + navbar */
+scroll-margin-top: 100px;
+scroll-behavior: smooth;
+}
+/* Deja un espacio de 80px entre el tope de la ventana y el contenido del panel */
+#profile .tab-pane {
+  scroll-margin-top: 200px;
+}
+/* Añádelo a tu <style> o styles.css */
+#server-status {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: hsl(40, 57%, 73%); /* Color dorado claro */
+}
+.status-dot {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    background: gray;
+    transition: background 0.3s;
+}
+.status-dot.online  { background: #4caf50; }  /* verde */
+.status-dot.offline { background: #f44336; } /* rojo */
+.status-dot.maintenance { background: #ff9800; } /* naranja */
+
+/* Estilo para la Cita del Día */
+.quote-widget blockquote {
+    font-style: italic;
+    color: hsl(40, 57%, 73%); /* Color dorado claro */
+    text-align: center;
+    margin: 0 0 0.5rem;
+    font-size: 1.18rem;
+}
+.quote-widget footer {
+    text-align: right;
+    font-size: 0.9rem;
+    color: hsl(40, 57%, 60%); /* Color dorado suave */
+    font-size: 1.18rem;
+}
+
+.fade-in-down {
+    animation-name: fadeInDown;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both; /* mantiene el estado final */
+    animation-delay: 1s
+}
+
+
+/* Contenedor general */
+.character-card {
+  /* sin p-3 ni mb-3 aquí: el padding ya está dentro */
+  display: flex;
+  align-items: center;
+  background: hwb(0 0% 100% / 0.451);
+  border: 1px solid lab(35.5% 21.97 40.98);
+  border-radius: 16px;
+  padding: 0.5rem;       /* padding interno */
+  margin-bottom: 1rem; /* separación vertical */
+  box-shadow: 0 0px 6px  hwb(29 9% 0%);
+  width: 100%;         /* ocupa todo el ancho de su columna */
+}
+
+/* Zona izquierda */
+.card-side-left {
+  flex: 0 0 60px;
+  display: flex;
+  justify-content: center;
+}
+.icon-race {
+  width: 100px;
+  height: 100px;
+  border: 2px solid lab(41.76% 25.4 47.39);
+  border-radius: 15%;
+}
+
+/* Zona central */
+.card-center {
+  flex: 1;
+  padding: 0 1rem;
+}
+.char-name {
+  margin: 0 0 0.5rem;
+  color:  hwb(29 9% 0%);
+  font-size: 1.4rem;
+}
+.char-info {
+  margin: 0.2rem 0;
+  color: #ddd;
+  font-size: 1rem !important;
+  display: flex;
+  align-items: center;
+}
+.icon-small {
+  width: 16px;
+  height: 16px;
+  margin-left: 0.3rem;
+}
+
+/* Zona derecha */
+.card-side-right {
+  flex: 0 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.icon-faction {
+  width: 80px;
+  height: 80px;
+}
+.icon-class {
+  width: 60px;
+  height: 60px;
+}
+
+/* Separación extra entre el título "Personajes" y las tarjetas */
+.character-block > h3 {
+  margin-top: 0 !important;  
+  margin-bottom: 1.8rem;  /* prueba con 1.5rem y ajusta al valor que necesites */
+}
+/* Reduce el espacio debajo de "Datos de la Cuenta" */
+#tab-info .info-block {
+  margin-bottom: 0rem !important;  /* ajusta a 0.5rem (o lo que prefieras) */
+}
+
+
+
+
+/* Contenedor de cada opción */
+.account-item {
+  padding: 0.75rem;            /* espacio interior */
+  border-radius: 6px;          /* esquinas suaves */
+  transition: background 0.2s; /* efecto suave */
+  cursor: pointer;             /* indica clicable */
+}
+
+/* Contenedor del icono: círculo y centrado */
+.account-item .icon {
+  flex-shrink: 0;              
+  width: 64px;                 
+  height: 64px;
+  margin-right: 0.75rem;
+  border-radius: 10%;        /* ⚠️ 0% → 50% para que sea un círculo */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid hwb(29 21% 1%);     /* borde sólido dorado */
+  box-shadow: 0 0 8px rgba(234, 227, 202, 0.6); /* brillo suave alrededor */
+}
+/* Imagen interna: proporción y centrado */
+.account-item .icon .icon-img {
+  width: 100%;                /* ocupa el 80% del contenedor */
+  height: 100%;
+  object-fit: contain;       /* no recorta, mantiene proporción */
+  display: block;
+}
+/* Texto de título y descripción */
+.account-item .text h5 {
+  margin: 0;
+  font-size: 1.28rem;
+  color: #eab461;
+  transition: transform 0.2s;   /* prepara el zoom suave */
+}
+
+/* 2) Zoom al pasar el ratón por la acción */
+.account-item:hover .text h5 {
+  color: hwb(29 21% 1%);  /* dorado para los encabezados */
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 4px 4px 3px rgba(0,0,0,1);
+}
+.account-item .text p {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  color: hwb(40 58% 12%); /* Color dorado claro */
+}
+/* 2) Zoom al pasar el ratón por la acción */
+.account-item:hover .text p {
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 4px 4px 3px rgba(0,0,0,1);
+}
+
+/* Efecto al pasar el ratón */
+.account-item:hover {
+  background-color: rgba(212,175,55,0.2); /* fondo dorado suave */
+}
+.account-item:hover .icon {
+  transform: scale(1.10);
+  transition: transform 0.3s;
+}
+
+/* Solo dentro del section#profile, pestañas de Mi Cuenta */
+#profile .nav-tabs .nav-link {
+  font-size: 1.4rem;                /* tamaño deseado */
+  background-color: transparent;    /* fondo transparente */
+}
+/* 1) Elimina la línea blanca bajo las pestañas */
+#profile .nav-tabs {
+  border-bottom: none !important;
+}
+
+/* Pestaña activa dentro de Mi Cuenta */
+#profile .nav-tabs .nav-link.active {
+  font-size: 1.4rem;               /* un pelín más grande al estar activa */
+  background-color: rgba(212,175,55,0.2); /* fondo dorado suave */
+  color: hwb(29 9% 0%);;        /* texto dorado */
+  border-color: #d4af3700 #d4af3700 transparent; /* bordes laterales dorados */
+  border-radius: 12px !important;    /* redondea TODAS las esquinas */
+  margin-bottom: -2px;                /* solapa el borde inferior con el contenido */
+}
+
+#profile .nav-tabs .nav-link:hover,
+#profile .nav-tabs .nav-link:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent;
+}
+/* Mini-tarjeta fija del personaje seleccionado */
+#selected-character-card,
+#selected-shop-character-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.416);
+  border: 1px solid hwb(29 9% 0%);
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 300px;
+  display: block;       /* para que margin auto funcione */
+  margin: 1rem auto;    /* 1rem arriba/abajo, auto izquierda/derecha */
+  color: #e0bbb0;
+  box-shadow: 0 0 16px #d4903799;
+}
+
+/* Icono de facción en la esquina superior derecha */
+.mini-faction-icon {
+  position: absolute;
+  top: 0px;     /* distancia desde arriba */
+  right: 8px;   /* distancia desde la derecha */
+  width: 24px;  /* ajusta tamaño a tu gusto */
+  height: 24px;
+  border: none !important;  
+}
+
+
+#selected-character-card .mini-card-header,
+#selected-shop-character-card .mini-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  position: relative
+}
+.mini-header-text .mini-level {
+  position: static;   /* elimina el posicionamiento absoluto */
+  margin: 0;          /* sin márgenes extra */
+  font-size: 1rem;
+  color: #eab461;
+}
+/* Texto de clase en mini‐tarjeta */
+.mini-header-text .mini-class {
+  margin: 0;
+  font-size: 1rem;      /* un poco más pequeño que el nivel */
+  color: #e0d8b0;         /* color gris claro */
+}
+#selected-character-card .mini-card-header img,
+#selected-shop-character-card .mini-card-header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid hsl(29, 65%, 52%);
+}
+#selected-character-card .mini-card-header .name,
+#selected-shop-character-card .mini-card-header .name {
+  font-family: 'Grenze', serif;
+  font-size: 1.25rem;
+  color: hwb(29 9% 0%)
+}
+#selected-character-card .mini-card-body p,
+#selected-shop-character-card .mini-card-body p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+/* Oculta la mini-tarjeta si no tiene contenido */
+#selected-character-card:empty,
+#selected-shop-character-card:empty {
+  display: none;
+}
+/* Centrar la etiqueta del selector */
+#character-selector-options,
+#character-selector-shop {
+  text-align: center;
+}
+/* Y mantener la etiqueta en bloque */
+#character-selector-options label,
+#character-selector-shop label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+/* Hace más estrechos los selects de personaje */
+#char-select-options,
+#char-select-shop {
+  max-width: 250px;    /* ancho máximo deseado */
+  width: 100%;         /* ocupa el 100% de ese máximo */
+  display: block;       /* necesario para que margin auto funcione */
+  margin: 0.5rem auto 1.5rem; /* ↑ 1.5rem de espacio abajo */
+}
+/* Color grisáceo para el placeholder (select inválido) */
+#char-select-options:invalid,
+#char-select-shop:invalid {
+  color: hwb(29 9% 0%);        /* texto dorado */
+  text-shadow: 4px 4px 3px rgba(0,0,0,1);
+  background-color: var(--color-form-bg);
+}
+
+/* Color normal para las demás opciones */
+#char-select-options,
+#char-select-shop {
+  background-color: var(--color-form-bg);
+  color: hwb(29 9% 0%);        /* texto dorado */
+  text-shadow: 4px 4px 3px rgba(0,0,0,1);
+  border: 1.5px solid hwb(29 21% 1%);
+  box-shadow: 0 0 12px hwb(29 21% 1%);
+}
+
+/* Asegura que, una vez válido, el color cambia al normal */
+#char-select-options:valid,
+#char-select-shop:valid {
+  color: hwb(29 9% 0%);        /* texto dorado */
+  text-shadow: 4px 4px 3px rgba(0,0,0,1);
+}
+
+
+/* Nivel 1: categorías */
+#shop-categories .btn-outline-primary {
+  color: hsl(40, 68%, 67%);        /* texto dorado */
+  border-color:  hsl(40, 68%, 67%);
+  background-color:  hsla(0, 0%, 0%, 0.379);
+}
+#shop-categories .btn-outline-primary:hover,
+#shop-categories .btn-outline-primary.active {
+  background-color:  hsl(40, 57%, 73%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(72.72% 28.35 64.73);  
+}
+
+/* Nivel 2: subcategorías */
+#shop-subcategories .btn-outline-secondary {
+  color: hsl(34, 81%, 64%);       /* texto dorado */
+  border-color:  hsl(34, 81%, 64%);
+  background-color:  hsla(0, 0%, 0%, 0.379);   
+}
+#shop-subcategories .btn-outline-secondary:hover,
+#shop-subcategories .btn-outline-secondary.active {
+  background-color:  hsl(40, 68%, 67%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(69.27% 36.6 61.5);  
+}
+
+/* Nivel 3: tamaño */
+#shop-typesize .btn-outline-success {
+  color: hsl(34, 77%, 61%);      /* texto dorado */
+  border-color:  hsl(34, 77%, 61%);
+  background-color:  hsla(0, 0%, 0%, 0.379);   
+}
+#shop-typesize .btn-outline-success:hover,
+#shop-typesize .btn-outline-success.active {
+  background-color:  hsl(40, 71%, 62%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(65.85% 45.09 58.25);  
+}
+
+/* Nivel 4: tipo */
+#shop-type .btn-outline-info {
+  color: hwb(29 19% 1%);        /* texto dorado */
+  border-color:  hwb(29 19% 1%);
+  background-color:  hsla(0, 0%, 0%, 0.379);   
+}
+#shop-type .btn-outline-info:hover,
+#shop-type .btn-outline-info.active {
+  background-color:  hsl(40, 73%, 59%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(65.85% 45.09 58.25);  
+}
+
+/* ————————————————
+   Personalización de tarjetas de producto
+   ———————————————— */
+
+/* 1) Ajustar el tamaño máximo de cada card */
+#product-list .card {
+  max-width: 260px;        /* ancho máximo */
+  margin: 0 auto;          /* centrar horizontalmente en la columna */
+  border-radius: 10px;      /* esquinas redondeadas */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-height: 100px;    /* ajusta este valor a lo que necesites */
+  display: flex;
+  flex-direction: column;
+  background-color: #00000000;
+  transition: background-color 0.3s, box-shadow 0.3s; /* efecto suave */
+  cursor: pointer;
+}
+
+/* 2) Imagen de cabecera */
+#product-list .card-img-top {
+  display: block;         /* elimina espacios en línea sobrantes */
+  width: 64px;            /* ocupa todo el ancho de la card */
+  height: 64px;          /* nuevo alto fijo */
+  object-fit: contain;      /* recorta y centra la imagen */
+  object-position: center;
+  margin: 1rem auto; 
+  border-radius: 10%;  
+  border: 2px solid hwb(29 21% 1%);     /* borde sólido dorado */
+  box-shadow: 0 0 16px rgba(234, 227, 202, 0.6); /* brillo suave alrededor */
+}
+/* 2.b) Cuerpo de la tarjeta como flex container */
+#product-list .card-body {
+  flex: 1;                  /* que ocupe todo el espacio disponible */
+  display: flex;
+  flex-direction: column;   /* de arriba abajo: título → precio → descripción → botón */
+  align-items: center;      /* centra cada elemento horizontalmente */
+  padding: 1rem;            /* tu padding preferido */
+}
+
+/* 3) Título y texto */
+#product-list .card-body .card-title {
+  font-size: 1.28rem;
+  color: #eab461;
+  transition: transform 0.2s;   /* prepara el zoom suave */
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+#product-list .card:hover .card-body .card-title {
+  color: hwb(29 21% 1%);  /* dorado para los encabezados */
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 4px 4px 3px rgba(0,0,0,1);
+  transform: scale(1.10);
+}
+
+#product-list .card-body .card-text {
+  min-height: 2.5em;       /* altura mínima para uniformar */
+  font-size: 1rem;
+  color: hwb(40 58% 12%); /* Color dorado claro */
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+#product-list .card-body .card-text:hover {
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 4px 4px 3px rgba(0,0,0,1);
+}
+
+/* Precio bajo el título */
+#product-list .product-price {
+  color: hwb(29 21% 1%);       /* mismo dorado que tus títulos activos */
+  font-size: 1.1rem;           /* un poco más grande, si quieres */
+  margin-bottom: 0.5rem;       /* espacio entre precio y descripción/botón */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+#product-list .card:hover .product-price {
+  color: hsl(40, 57%, 73%);    /* color distinto al hacer hover, por ejemplo un dorado más suave */
+/* sombras múltiples para un resalte muy intenso */
+  text-shadow:
+    0 0 4px rgba(212,175,55,1),
+    0 0 8px rgba(212,175,55,1),
+    0 0 12px rgba(212,175,55,0.9),
+    0 0 16px rgba(212,175,55,0.7);
+
+  /* opcional: un ligero aumento de tamaño para enfatizar */
+  transform: scale(1.1);
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* 5) Botón “Comprar” */
+#product-list .add-to-cart {
+  font-size: 1rem;
+  color: hsl(34, 81%, 64%);       /* texto dorado */
+  border-color:  hsl(34, 81%, 64%);
+  background-color:  hsla(0, 0%, 0%, 0.379); 
+}
+#product-list .card:hover .add-to-cart {
+  background-color:  hsl(40, 57%, 73%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(72.72% 28.35 64.73); 
+  transition: transform 0.2s;
+}
+
+#product-list .add-to-cart.btn-success:hover {
+  background-color:  hsl(40, 73%, 59%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(65.85% 45.09 58.25); 
+  transform: scale(1.1);  
+}
+
+#product-list .card:hover {
+  background-color: rgba(212,175,55,0.2); /* fondo dorado suave */
+  cursor: pointer;
+}
+#product-list .card:hover .card-img-top {
+  transform: scale(1.10);
+  transition: transform 0.3s;
+}
+
+
+
+
+
+/* ===== Estilos para la sección "Tu Carrito" ===== */
+
+/* Contenedor principal */
+#cart-section {
+  background-color: #1a1a1a00;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* Título "Tu Carrito" */
+#cart-section > h4 {
+  color: hwb(29 21% 1%);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Tabla básica */
+#cart-section table.table {
+  width: 100%;
+  border-collapse: separate !important;   /* ← de collapse a separate */
+  border-spacing: 0 !important;           /* ← elimina espacios inesperados */
+  border-radius: 8px;                     /* ← radio general */
+  overflow: hidden;                       /* ← recorta esquinas */
+}
+/* Esquinas superiores */
+#cart-section table.table thead th:first-child {
+  border-top-left-radius: 8px !important;
+}
+#cart-section table.table thead th:last-child {
+  border-top-right-radius: 8px !important;
+}
+/* Esquinas inferiores redondeadas en la fila de Total/Comprar */
+#cart-section table.table tfoot tr th:first-child {
+  border-bottom-left-radius: 8px !important;
+}
+
+#cart-section table.table tfoot tr th:last-child {
+  border-bottom-right-radius: 8px !important;
+}
+/* ===== Estilos de encabezado de la tabla del carrito ===== */
+#cart-section table.table thead th {
+  text-align: center !important;        /* Centra el texto */
+  font-size: 1.05rem;
+  background-color:  hsl(40, 57%, 73%);
+  color: hsl(0, 0%, 0%);
+  padding: 0.75rem !important;          /* Espacio interior */
+  font-weight: 600 !important;          /* Negrita suave */
+}
+
+/* ===== Centrar solo columnas específicas en “Tu Carrito” ===== */
+/* 2ª columna: Cantidad */
+#cart-section table.table tbody td:nth-child(2) {
+  text-align: center !important;
+  width: 160px !important;          /* ancho fijo */
+  max-width: 160px !important;      /* no crezca */
+}
+/* 3ª columna: Precio */
+#cart-section table.table tbody td:nth-child(3) {
+  text-align: center !important;  
+  width: 160px !important;
+  max-width: 160px !important;
+}
+/* 4ª columna: Subtotal */
+#cart-section table.table tbody td:nth-child(4) {
+  text-align: center !important;
+  width: 160px !important;
+  max-width: 160px !important;
+}
+/* 5ª columna: Acción */
+#cart-section table.table tbody td:nth-child(5) {
+  text-align: center !important;
+  width: 160px !important;
+  max-width: 160px !important;
+}
+/* ===== Centrar subtotal y botón en la última fila (tfoot) ===== */
+/* 2ª celda de tfoot: Subtotal total */
+#cart-section table.table tfoot td:nth-child(2),
+#cart-section table.table tfoot th:nth-child(2) {
+  text-align: center !important;
+}
+/* 3ª celda de tfoot: Botón Comprar */
+#cart-section table.table tfoot td:nth-child(3),
+#cart-section table.table tfoot th:nth-child(3) {
+  text-align: center !important;
+}
+
+
+/* Fondo y texto de cada celda y encabezado */
+#cart-section table.table > :not(caption) > * > * {
+  background-color:  hsla(0, 0%, 0%, 0.379);
+  color: hsl(40, 68%, 67%);
+}
+
+/* Stripe oscuro para filas impares */
+#cart-section table.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color:  hsla(0, 0%, 0%, 0.379);
+}
+
+/* Líneas divisorias sutiles */
+#cart-section table.table th,
+#cart-section table.table td {
+  border: 1px solid hsla(40, 68%, 67%, 0.292)!important;
+
+}
+#cart-section .cart-item-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Botones de cantidad (+/–) */
+#cart-section .increase-qty,
+#cart-section .decrease-qty {
+  background-color: hsl(40, 68%, 67%); 
+  border: none;
+  color: #000;
+  width: 1.8rem;
+  height: 1.8rem;
+  line-height: 1.6rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 0.25rem;
+}
+
+#cart-section .increase-qty:hover,
+#cart-section .decrease-qty:hover {
+  background-color:  hsl(40, 73%, 59%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(65.85% 45.09 58.25);   
+}
+
+/* Botón Eliminar */
+#cart-section .remove-item {
+  background-color: #e78c3c6d;
+  border: none;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#cart-section .remove-item:hover {
+  background-color:  hsl(40, 73%, 59%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(65.85% 45.09 58.25);   
+}
+
+/* Botón Comprar (footer) */
+#cart-section #checkout-btn {
+  background-color: hsl(40, 57%, 73%);
+  border: none;
+  color: hsl(0, 0%, 0%);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px lab(72.72% 28.35 64.73);
+  transition: transform 0.2s;
+}
+
+#cart-section #checkout-btn:hover {
+  background-color:  hsl(40, 73%, 59%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: 0 0 12px lab(65.85% 45.09 58.25); 
+  transform: scale(1.1);  
+}
+
+
+
+
+
+
+
+/* Colores de calidad (igual que Wowhead WotLK) */
+:root {
+  --q0: #9d9d9d;  /* Pobre */
+  --q1: #ffffff;  /* Común */
+  --q2: #1eff00;  /* Infrecuente */
+  --q3: #0070dd;  /* Raro */
+  --q4: #a335ee;  /* Épico */
+  --q5: #ff8000;  /* Legendario */
+}
+
+/* Borde del tooltip según calidad */
+.ttitem {
+  text-align: left;
+  background-color: rgba(29, 29, 29, 0.95);
+  color: #fff;
+  border: 2px solid var(--q1);       /* default Común */
+  border-radius: 4px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-family: Tahoma, sans-serif;
+  font-size: 0.75rem;
+  position: relative;
+  min-width: 320px;
+  max-width: 320px;
+}
+
+/* Ajustar borde de cada calidad */
+.ttitem.q0 { border-color: var(--q0); }
+.ttitem.q1 { border-color: var(--q1); }
+.ttitem.q2 { border-color: var(--q2); }
+.ttitem.q3 { border-color: var(--q3); }
+.ttitem.q4 { border-color: var(--q4); }
+.ttitem.q5 { border-color: var(--q5); }
+
+/* Nombre coloreado */
+.ttitem .info strong {
+  color: var(--q3); /* default Raro */
+  font-size: 1rem;
+}
+.ttitem.q0 .info strong { color: var(--q0); }
+.ttitem.q1 .info strong { color: var(--q1); }
+.ttitem.q2 .info strong { color: var(--q2); }
+.ttitem.q3 .info strong { color: var(--q3); }
+.ttitem.q4 .info strong { color: var(--q4); }
+.ttitem.q5 .info strong { color: var(--q5); }
+
+/* Ajustar la flecha según calidad */
+.ttitem.q0::after { border-color: var(--q0) transparent transparent transparent; }
+.ttitem.q1::after { border-color: var(--q1) transparent transparent transparent; }
+.ttitem.q2::after { border-color: var(--q2) transparent transparent transparent; }
+.ttitem.q3::after { border-color: var(--q3) transparent transparent transparent; }
+.ttitem.q4::after { border-color: var(--q4) transparent transparent transparent; }
+.ttitem.q5::after { border-color: var(--q5) transparent transparent transparent; }
+
+.ttitem {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.ttitem .info {
+  flex: 1;
+}
+
+.ttitem .info small {
+  display: block;
+  color: #ccc;
+  line-height: 1;
+}
+.ttitem .header { margin-bottom: 0.5rem; }
+.ttitem .stats  { margin-bottom: 0.5rem; }
+.ttitem .footer { margin-top: 0.5rem; font-size:0.75rem; color:#ccc; }
+
+.tt-header {
+  display: block;           /* ya no es flex */
+}
+
+.tt-title-full {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  margin-top: -0.2rem;
+}
+.tt-main-stats,
+.tt-extra-stats,
+.tt-sockets,
+.tt-spells,
+.tt-footer {
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+.tt-desc {
+  margin: 0.5rem 0;
+}
+/* Fuerza verticalidad en las líneas del tooltip */
+.tt-extra-stats,
+.tt-sockets,
+.tt-spells {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.tt-line {
+  display: block !important;
+  width: 100%;
+  color: #ffffff;
+}
+
+/* Líneas verdes para stats “Equipar” y similares */
+.tt-green {
+  color: #1eff00;  /* verde infrecuente */
+  font-size: 0.75rem;
+}
+/* Ligadura (“Se liga…”) y “Único” en blanco */
+.tt-binding {
+  color: #ffffff;
+  font-size: 0.75rem;
+}
+.tt-unique {
+  color: #ffffff;      /* mismo estilo que binding */
+  font-size: 0.75rem;
+}
+/* Línea de Slot */
+/* Contenedor que limpia floats */
+.tt-slot,
+.tt-dmg-speed {
+  overflow: hidden;     /* para que contenga los floats */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+}
+
+/* Texto a la izquierda flota a la izquierda */
+.tt-slot-left,
+.tt-dps-left {
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+}
+/* Texto derecho flota a la derecha */
+.tt-slot-right,
+.tt-dps-right {
+  float: right;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 0.75rem;  /* evita que se parta en varias líneas */
+}
+
+
+/* Estilos para sockets */
+.socket-list {
+  display: block;
+  gap: -0.5rem;             /* separación entre gemas */
+  margin: 0;
+}
+.socket-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;   /* espacio entre sockets */
+  margin-bottom: -0.2rem;
+  margin-bottom: -0.2rem;  /* espacio si hubiera más líneas */
+}
+.socket-img {
+  width: 14px;           /* ajusta según tu PNG */
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.socket-bonus {
+  font-size: 0.75rem;
+  color: #9d9d9d;
+  margin-top: -0.2rem;
+}
+
+.socket-text {
+  margin-left: 4px;      /* distancia tras el icono */
+  font-size: 0.75rem;
+  color:  #9d9d9d;
+  margin: 0;
+}
+
+/* — Contenedor general del bloque de conjunto */
+.tt-set {
+  margin-top: 0.5rem;
+  border-top: 1px solid #555;
+  padding-top: 0.5rem;
+}
+
+/* — Título del conjunto */
+.tt-set-title {
+  margin-top: 1rem;
+  color: #ffd000; /* dorado */
+}
+
+/* — Cada pieza del conjunto */
+.tt-set-piece {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: #a0a0a0;
+}
+
+/* — Texto de bonificaciones */
+.tt-set-bonus {
+  font-size: 0.75rem;
+  color: #a0a0a0; /* gris claro */
+  margin-top: 0.2rem;
+}
+
+/* Color morado para la clase Brujo */
+.cls-Brujo {
+  color: #9482C9;
+}
+.cls-Caballero-de-la-Muerte {
+  color: #C41F3B;
+}
+.cls-Cazador {
+  color: #ABD473;
+}
+.cls-Chamán {
+  color: #0070DE;
+}
+.cls-Druida {
+  color: #FF7D0A;
+}
+.cls-Guerrero {
+  color: #C79C6E;
+}
+.cls-Mago {
+  color: #69CCF0;
+}
+.cls-Paladín {
+  color: #F58CBA;
+}
+.cls-Pícaro {
+  color: #FFF569;
+}
+.cls-Sacerdote {
+  color: #FFFFFF;
+}

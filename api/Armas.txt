@@ -1,0 +1,697 @@
+
+						DAGAS
+
+{
+  "id": 
+  "wowheadId":42347,
+  "name": "Hoja de hechizo de Gladiador Furioso",
+  "image": "/assets/images/shop/inv_weapon_shortblade_91.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42256,
+  "name": "Mutilador de Gladiador Furioso",
+  "image": "/assets/images/shop/inv_weapon_shortblade_90.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42243,
+  "name": "Faca de Gladiador Furioso",
+  "image": "/assets/images/shop/inv_weapon_shortblade_90.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45930,
+  "name": "Cuchillo de bota de combatiente",
+  "image": "/assets/images/shop/inv_weapon_shortblade_79.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45448,
+  "name": "Mordedura Azarosa"
+  "image": "/assets/images/shop/inv_weapon_shortblade_77.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45527,
+  "name": "Escriba de almas",
+  "image": "/assets/images/shop/inv_weapon_shortblade_80.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 49304,
+  "name": "Colmillo de los Místicos afilado"
+  "image": "/assets/images/shop/inv_weapon_shortblade_06.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+					ARMAS DE PUÑO
+
+{
+  "id": 
+  "wowheadId": 42271,
+  "name": "Destripadora izquierda de Gladiador furioso",
+  "image": "/assets/images/shop/inv_weapon_hand_19.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42266,
+  "name": "Desgarradora izquierda de Gladiador furioso",
+  "image": "/assets/images/shop/inv_weapon_hand_19.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42261,
+  "name": "Destripadora derecha de Gladiador furioso",
+  "image": "/assets/images/shop/inv_weapon_hand_19.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45449,
+  "name": "La Picadora",
+  "image": "/assets/images/shop/inv_weapon_hand_22.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+						HACHA 1M
+
+{
+  "id": 
+  "wowheadId": 42233,
+  "name": "Trituradora de Gladiador furioso",
+  "image": "/assets/images/shop/inv_axe_97.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42228,
+  "name": "Rebanadora de Gladiador furioso",
+  "image": "/assets/images/shop/inv_axe_97.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42209,
+  "name": "Cuchilla de Gladiador furioso",
+  "image": "/assets/images/shop/inv_axe_97.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 50191,
+  "name": "Buenas noches",
+  "image": "/assets/images/shop/inv_axe_91.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 50290,
+  "name": "Rebanamuñecas de Falric",
+  "image": "/assets/images/shop/inv_axe_89.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+						MAZAS 1M
+
+{
+  "id": 
+  "wowheadId": 42353,
+  "name": "Mazo de Gladiador furioso",
+  "image": "/assets/images/shop/inv_mace_17.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42281,
+  "name": "Partehuesos de Gladiador furioso",
+  "image": "/assets/images/shop/inv_mace_17.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42276,
+  "name": "Moledora de Gladiador furioso",
+  "image": "/assets/images/shop/inv_mace_17.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 46035,
+  "name": "Aesuga, Mano del Campeón candente",
+  "image": "/assets/images/shop/inv_mace_92.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45876,
+  "name": "Escalofrío",
+  "image": "/assets/images/shop/inv_mace_90.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 46097,
+  "name": "Caricia de la locura",
+  "image": "/assets/images/shop/inv_mace_91.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45315,
+  "name": "Creapiedras",
+  "image": "/assets/images/shop/inv_mace_90.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+					ESPADAS 1M
+
+{
+  "id": 
+  "wowheadId": 42291,
+  "name": "Hoja rauda de Gladiador furioso",
+  "image": "/assets/images/shop/inv_sword_58.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42286,
+  "name": "Cercenadora de Gladiador furioso",
+  "image": "/assets/images/shop/inv_sword_58.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 46036,
+  "name": "Sable del vacío",
+  "image": "/assets/images/shop/inv_sword_133.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45990,
+  "name": "Hoja de fusión",
+  "image": "/assets/images/shop/inv_sword_132.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45947,
+  "name": "Serilas, hoja de sangre de Invar Unibrazo",
+  "image": "/assets/images/shop/inv_sword_133.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45437,
+  "name": "Hoja inscrita con runas",
+  "image": "/assets/images/shop/inv_sword_134.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45110,
+  "name": "Protección de titanes",
+  "image": "/assets/images/shop/inv_sword_132.jpg",
+  "category": "Armas",
+  "subcategory": 
+  "priceTokens":
+}
+
+				ARMAS DE ASTA
+
+{
+  "id": 
+  "wowheadId": 42328,
+  "name": "Pica de Gladiador furioso",
+  "image": "/assets/images/shop/inv_weapon_halberd_29.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 50296,
+  "name": "Arpón de cazador de orcas",
+  "image": "/assets/images/shop/inv_weapon_halberd_26.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+				BASTONES
+	
+{
+  "id": 
+  "wowheadId": 44422,
+  "name": "Bastón de enfoque de Gladiador furioso",
+  "image": "/assets/images/shop/inv_staff_87.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 44421,
+  "name": "Bastón de guerra de Gladiador furioso",
+  "image": "/assets/images/shop/inv_staff_87.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42391,
+  "name": "Bastón de Gladiador furioso",
+  "image": "/assets/images/shop/inv_staff_88.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42385,
+  "name": "Bastón de energía de Gladiador furioso",
+  "image": "/assets/images/shop/inv_staff_87.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42364,
+  "name": "Bastón de batalla de Gladiador furioso",
+  "image": "/assets/images/shop/inv_staff_87.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45171,
+  "name": "Intensidad",
+  "image": "/assets/images/shop/inv_staff_95.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45234,
+  "name": "Éxtasis",
+  "image": "/assets/images/shop/inv_staff_93.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45256,
+  "name": "Rostro retorcido",
+  "image": "/assets/images/shop/inv_staff_95.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45479,
+  "name": "La Protectora",
+  "image": "/assets/images/shop/inv_staff_93.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45886,
+  "name": "Bastón de núcleo de hielo",
+  "image": "/assets/images/shop/inv_staff_94.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 46033,
+  "name": "Tierra torturada",
+  "image": "/assets/images/shop/inv_staff_94.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+				HACHAS 2M		
+
+{
+  "id": 
+  "wowheadId": 42318,
+  "name": "Decapitadora de Gladiador furioso",
+  "image": "/assets/images/shop/inv_axe_98.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 50267,
+  "name": "Decapitadora tiránica",
+  "image": "/assets/images/shop/inv_axe_96.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+
+				MAZAS 2M
+
+{
+  "id": 
+  "wowheadId": 42323,
+  "name": "Crujehuesos de Gladiador furioso",
+  "image": "/assets/images/shop/inv_mace_74.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 46067,
+  "name": "Martillo de susurros aplastantes",
+  "image": "/assets/images/shop/inv_mace_93.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+					ESPADAS 2M
+
+{
+  "id": 
+  "wowheadId": 42333,
+  "name": "Espada magna de Gladiador furioso",
+  "image": "/assets/images/shop/inv_sword_131.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45868,
+  "name": "Filo de Aesir",
+  "image": "/assets/images/shop/inv_sword_136.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45233,
+  "name": "Filo Runatormenta",
+  "image": "/assets/images/shop/inv_sword_136.jpg",
+  "category": "Armas",
+  "subcategory": 
+  "priceTokens":
+}
+
+					ARCOS
+
+{
+  "id": 
+  "wowheadId": 45327,
+  "name": "Grito de la sirena",
+  "image": "/assets/images/shop/inv_weapon_bow_51.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42491,
+  "name": "Arco largo de Gladiador furioso",
+  "image": "/assets/images/shop/inv_weapon_bow_31.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+
+				BALLESTAS
+
+{
+  "id": 
+  "wowheadId": 42496,
+  "name": "Ballesta pesada de Gladiador furioso",
+  "image": "/assets/images/shop/inv_weapon_crossbow_32.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 50262,
+  "name": "Lanzasaetas de glaciar vil",
+  "image": "/assets/images/shop/inv_weapon_crossbow_30.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+			ARMA DE FUEGO
+
+{
+  "id": 
+  "wowheadId": 42486,
+  "name": "Rifle de Gladiador furioso",
+  "image": "/assets/images/shop/inv_weapon_rifle_31.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45137,
+  "name": "Ruina de Veranus",
+  "image": "/assets/images/shop/inv_weapon_rifle_31.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45261,
+  "name": "Pesadilla del gigante",
+  "image": "/assets/images/shop/inv_weapon_rifle_33.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+			ARROJADIZAS
+
+{
+  "id": 
+  "wowheadId": 42451,
+  "name": "Filo de guerra de Gladiador furioso",
+  "image": "/assets/images/shop/",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45296,
+  "name": "Hojas giratorias",
+  "image": "/assets/images/shop/inv_throwingknife_08.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+				VARITAS
+
+{
+  "id": 
+  "wowheadId": 42520,
+  "name": "Toque penetrante de Gladiador furioso",
+  "image": "/assets/images/shop/inv_wand_27.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42514,
+  "name": "Bordón de Luz de Gladiador furioso",
+  "image": "/assets/images/shop/inv_wand_27.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 42503,
+  "name": "Toque de derrota de Gladiador furioso",
+  "image": "/assets/images/shop/inv_wand_27.jpg",
+  "category": "Armas",
+  "subcategory": "PVP",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45170,
+  "name": "Cetro de creación",
+  "image": "/assets/images/shop/inv_wand_29.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45257,
+  "name": "Varita de cristal de cuarzo",
+  "image": "/assets/images/shop/inv_wand_28.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45294,
+  "name": "Rama de hiedra petrificada",
+  "image": "/assets/images/shop/inv_wand_29.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 45511,
+  "name": "Cetro de almas perdidas",
+  "image": "/assets/images/shop/inv_wand_28.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": 50291,
+  "name": "Partealmas",
+  "image": "/assets/images/shop/inv_wand_1h_stratholme_d_02.jpg",
+  "category": "Armas",
+  "subcategory": "PVE",
+  "priceTokens":
+}
+
+					FIN ARMAAAAAAAAAAAAAAS
+
+{
+  "id": 
+  "wowheadId": ,
+  "name": "",
+  "image": "/assets/images/shop/",
+  "category": "Armas",
+  "subcategory": 
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": ,
+  "name": "",
+  "image": "/assets/images/shop/",
+  "category": "Armas",
+  "subcategory": 
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": ,
+  "name": "",
+  "image": "/assets/images/shop/",
+  "category": "Armas",
+  "subcategory": 
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": ,
+  "name": "",
+  "image": "/assets/images/shop/",
+  "category": "Armas",
+  "subcategory": 
+  "priceTokens":
+}
+{
+  "id": 
+  "wowheadId": ,
+  "name": "",
+  "image": "/assets/images/shop/",
+  "category": "Armas",
+  "subcategory": 
+  "priceTokens":
+}

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primordium WoW</title>
+  <!-- Favicon PNG transparente -->
+  <link rel="icon" type="image/png" href="assets/images/logoP2.png" />
+  <link rel="shortcut icon" type="image/png" href="assets/images/logoP.png" />
+  <!-- Google Font: Grenze -->
+  <link href="https://fonts.googleapis.com/css2?family=Grenze&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Popper.js (requisito de Tippy) -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <!-- Tippy.js -->
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+  <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
+<body>
+  <!-- Refined Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#" data-target="home">INICIO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-target="create">CREAR CUENTA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-target="download">DESCARGAS</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" 
+               href="#" 
+               id="infoDropdown" 
+               role="button" 
+               data-bs-toggle="dropdown" 
+               aria-expanded="false" 
+               data-target="info-servidor">
+              INFO SERVIDOR
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="infoDropdown">
+              <li>
+                <a class="dropdown-item"
+                   href="#info-basic"
+                   data-target="info-servidor"
+                   data-scroll="info-basic">
+                  Información Básica
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                   href="#info-connect"
+                   data-target="info-servidor"
+                   data-scroll="info-connect">
+                  ¿Cómo Conectarse?
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" 
+               href="#" 
+               id="infoDropdown" 
+               role="button" 
+               data-bs-toggle="dropdown" 
+               aria-expanded="false" 
+               data-target="events">
+              EVENTOS
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="eventsDropdown">
+              <li>
+                <a class="dropdown-item"
+                   href="#events"
+                   data-target="events"
+                   data-scroll="events">
+                  Próximos Eventos
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                   href="#calendar"
+                   data-target="events"
+                   data-scroll="calendar">
+                  Calendario
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#" data-target="tools">HERRAMIENTAS</a></li>
+          <!-- menú Usuario -->
+          <!-- Estado NO autenticado: enlace de Login -->
+          <li class="nav-item" id="nav-login-item">
+            <a href="#" class="nav-link" id="nav-login" data-target="login">LOGIN</a>
+          </li>
+          <!-- Estado autenticado: dropdown de usuario (oculto por defecto) -->
+          <li class="nav-item dropdown d-none" id="nav-user-item">
+            <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              <span id="nav-username"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+              <li>
+                <a class="dropdown-item" href="#" data-target="profile" id="my-account">Mi Cuenta</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" href="#" id="logout" data-target="login">Desconectarse</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-center">
+      <a href="index.html" class="hero-logo-link">
+        <img src="assets/images/primordium.png"
+             alt="Primordium Logo"
+             style="max-width:380px; height:auto;"
+             class="hero-logo" />
+      </a>
+    </div>
+  </div>
+  <!-- Content Sections Hidden by Default -->
+  <div id="content-sections"> 
+    <!-- 1) Home (vacío o bienvenida) --> 
+    <section id="home" class="container py-5">
+      <div class="content-wrapper">
+        <div class="row gx-5 gy-4">
+          <!-- Noticias & Updates -->
+          <div class="col-lg-8">
+            <!-- tus tarjetas… -->
+            <div class="module-wrapper">
+              <h2>¡Bievenid@ a tu Destino!</h2>
+              <p>Has llegado al umbral de un universo forjado con pasión y creado para ti.</p> 
+              <p>Aquí encontrarás ideas que despiertan la curiosidad, caminos que desafían la rutina y tesoros de conocimiento esperando a ser descubiertos.
+                 Prepárate para sumergirte en historias que encienden la imaginación, para desafiar tus límites y para formar parte de una comunidad que pisa fuerte en cada paso.</p>
+              <p>Alza tu estandarte de audacia, porque juntos forjaremos nuevas leyendas que necesitarán de ti.</p>
+              <p>"Primordium WoW"</p>
+            </div>
+            <!-- más tarjetas -->
+            <div class="module-wrapper">
+              <h2>Fecha de Lanzamiento</h2>
+              <p>¡Tenemos fecha de lanzamiento para que puedas comenzar a escribir esta historia!</p> 
+              <p>Con mucho esfuerzo y dedicación estaremos ansiosos de recibir a cada Guerrer@ este próximo día 
+                 Viernes 4 de Julio del 2025.</p>
+              <p>Mantente atento al conteo regresivo para realizar tu ingreso al Reino "XXXXXXX"</p>
+            </div>
+          </div>
+
+          <!-- Telemetría del Servidor -->
+          <div class="col-lg-4">
+            <!-- Estado del Servidor -->
+            <div class="module-wrapper">
+              <h2 class="text-gold mb-4">Estado del Servidor</h2>
+              <div id="server-status">
+                <span id="status-indicator" class="status-dot"></span>
+                <span id="status-text">Cargando…</span>
+                <div id="players-info"></div>
+                <div id="uptime-info"></div>
+              </div>
+            </div>
+            <!-- Realmlist del Servidor -->
+            <div class="module-wrapper">
+              <h2>Realmlist</h2>
+              <p>logon.primordiumwow.com</p>
+            </div>
+            <!-- Server Time -->
+            <div class="module-wrapper">
+              <h2>Hora del Servidor</h2>
+              <p></p>
+            </div>
+            <div class="module-wrapper">
+              <div class="quote-widget">
+                <h2>Cita del Día</h2>
+                <blockquote id="daily-quote">Cargando…</blockquote>
+                <footer id="quote-author"></footer>
+              </div>
+            </div>
+            <!-- otros widgets con su propio module-wrapper -->
+          </div>
+        </div>
+      </div>
+    </section> 
+    
+    <!-- 2) Register -->  
+    <section id="create" class="d-none container py-5">
+      <div class="content-wrapper">
+        <h2 class="text-gold mb-4 text-center">Crear Cuenta</h2>
+        <div class="form-container mx-auto">
+          <form id="create-account-form" novalidate>
+            <!-- Usuario -->
+            <div class="mb-3">
+              <label for="username" class="form-label text-light">Nombre de Usuario</label>
+                <input type="text"
+                       class="form-control bg-dark text-light border-1 border-gold"
+                       id="username"
+                       name="username"
+                       placeholder="Elige un nick épico"
+                       required
+                       minlength="3"
+                       maxlength="16">
+              <div class="invalid-feedback">Debe tener entre 3 y 16 caracteres.</div>
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label text-light">Correo Electrónico</label>
+              <input type="email"
+                     class="form-control bg-dark text-light border-1 border-gold"
+                     id="email"
+                     name="email"
+                     placeholder="tú@dominio.com"
+                     required>
+              <div class="invalid-feedback">Introduce un correo válido.</div>
+            </div>
+            <!-- Contraseña -->
+            <div class="mb-3">
+              <label for="password" class="form-label text-light">Contraseña</label>
+              <input type="password"
+                     class="form-control bg-dark text-light border-1 border-gold"
+                     id="password"
+                     name="password"
+                     placeholder="••••••••"
+                     required
+                     minlength="8">
+              <div class="invalid-feedback">Mínimo 8 caracteres.</div>
+            </div>
+            <!-- Confirmar Contraseña -->
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label text-light">Confirmar Contraseña</label>
+              <input type="password"
+                     class="form-control bg-dark text-light border-1 border-gold"
+                     id="confirm-password"
+                     name="confirm-password"
+                     placeholder="••••••••"
+                     required>
+              <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+            </div>
+            <!-- Términos -->
+            <div class="form-check mb-4">
+              <input class="form-check-input border-gold" 
+                     type="checkbox" 
+                     id="terms" 
+                     required>
+              <label class="form-check-label text-light" for="terms">
+                Acepto los <a href="#" class="text-gold">términos y condiciones</a>
+              </label>
+              <div class="invalid-feedback">Debes aceptar los términos.</div>
+            </div>
+            <!-- Botón -->
+            <button type="submit" class="btn btn-gold w-100">Crear Cuenta</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- 3) Download -->
+    <section id="download" class="d-none container py-5">
+      <div class="content-wrapper">
+        <h2>Descargas</h2>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+        <p>Aquí irán los enlaces al cliente y parches.</p>
+      </div>  
+    </section>
+    <!-- 4) InfoServer -->
+    <section id="info-servidor" class="d-none container py-5">
+      <!-- 4.1 Descripción General -->
+      <div class="content-wrapper">
+        <h2 class="mb-3 text-center">Información del Servidor</h2>
+        <p class="mb-3 text-center">
+          Embárcate en una travesía sin igual donde la épica del <strong>Wrath of the Lich King 3.3.5a</strong> cobra vida en cada rincón: bienvenido a un hogar forjado por y para la comunidad latinoamericana. Aquí no buscamos récords de velocidad ni competir en cifras; nuestra fuerza radica en los vínculos que tejemos, en la hermandad que late en cada mazmorra y en la calidez de cada encuentro.
+        </p>
+        <p class="mb-3 text-center">
+          Este proyecto no es solo un servidor, es el inicio de un sueño. Una plataforma construida con dedicación, respeto al legado del juego y compromiso por entregar una experiencia estable, funcional y emocionalmente significativa. 
+        </p>
+        <h3 class="mb-1 text-center fade-in-down">¡Escribe tu propia historia!</h3>
+        <img
+          src="assets/images/primordium.png"
+          alt="Escena épica de Primordium WoW"
+          class="d-block mx-auto fade-in-down mb-3"
+          style="max-width:15%; height:auto;"
+        />
+        <!-- 4.2 Contenido subsecciones -->
+        <div id="info-basic" class="mb-5">
+          <h3>Información Básica</h3>
+          <p>Rates: XP 5×, Oro 3×, PvP 2×…</p>
+          <!-- …lo que quieras… -->
+        </div>
+        <div id="info-connect" class="mb-5">
+          <h3>¿Cómo Conectarse?</h3>
+          <ol>
+            <li>Descarga el cliente desde “Descargas”.</li>
+            <li>Aplica el parche en <code>Data\enGB.MPQ</code>.</li>
+            <li>Configura tu realmlist en <code>realmlist.wtf</code>.</li>
+            <li>¡Entra al juego y disfruta!</li>
+          </ol>
+        </div>
+      </div>    
+    </section>
+    <!-- 5) Eventos -->
+    <section id="events" class="d-none container py-5">
+      <!-- 5.1 Descripción General -->
+      <div class="content-wrapper">
+        <h2>Eventos!</h2>
+        <p>Bienvenido a la sección de Eventos de nuestro servidor. Aquí encontrarás todo lo que necesitas saber: ...</p>
+        <!-- 5.2 Contenido subsecciones -->
+        <div id="event-list" class="mb-5">
+          <h3>Próximos Eventos</h3>
+          <p>Yajuuuuuuu</p>
+          <!-- …lo que quieras… -->
+        </div>
+        <div id="calendar" class="mb-5">
+          <h3>Calendario</h3>
+          <p>Bienvenido al Calendario de nuestro servidor. Aquí encontrarás todo lo que necesitas saber: ...</p>
+        </div>
+      </div>   
+    </section>
+    <!-- 6) Tools -->
+    <section id="tools" class="d-none container py-5">
+      <div class="content-wrapper">
+        <h2 class="text-center">Herramientas</h2>
+        <p class="mb-5 text-center">En esta sección encontrarás todo tipo de utilidades para acompañar tu aventura.</p>
+        <h3>Wrath of the Lich King DB</h3>
+        <ul>
+          <!-- Otros enlaces a utilidades -->
+          <li>
+            <a href="https://wotlkdb.com/"
+               target="_blank"
+               rel="noopener">
+               🔗 Base de datos Wrath of the Lich King (wotlkdb.com)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 7) Login -->
+    <section id="login" class="d-none container py-5">
+      <div class="content-wrapper">
+        <h2 class="text-gold mb-4 text-center">¡Bienvenido de nuevo!</h2>
+        <p class="mb-5 text-center">
+          Accede con tu usuario y contraseña para continuar tu aventura.
+        </p>
+
+        <div class="form-container mx-auto">
+          <form id="login-form" novalidate>
+            <!-- Usuario o Email -->
+            <div class="mb-3">
+              <label for="login-identifier" class="form-label text-light">Usuario o Email</label>
+              <input type="text"
+                     class="form-control bg-dark text-light border-1 border-gold"
+                     id="login-identifier"
+                     name="identifier"
+                     placeholder="Escribe tu usuario o correo"
+                     required>
+              <div class="invalid-feedback">Por favor ingresa tu usuario o correo.</div>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="mb-3">
+              <label for="login-password" class="form-label text-light">Contraseña</label>
+              <input type="password"
+                     class="form-control bg-dark text-light border-1 border-gold"
+                     id="login-password"
+                     name="password"
+                     placeholder="••••••••"
+                     required>
+              <div class="invalid-feedback">Por favor ingresa tu contraseña.</div>
+            </div>
+
+            <!-- Recordarme -->
+            <div class="form-check mb-4">
+              <input class="form-check-input border-gold" 
+                     type="checkbox" 
+                     id="login-remember">
+              <label class="form-check-label text-light" for="login-remember">
+                Recuérdame
+              </label>
+            </div>
+
+            <!-- Botón -->
+            <button type="submit" class="btn btn-gold w-100 mb-3">Iniciar Sesión</button>
+
+            <!-- Enlace a registro -->
+            <p class="text-center">
+              ¿No tienes una cuenta? 
+              <a href="#" class="text-gold" data-target="create">Regístrate aquí</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>  
+    <!-- 8) Mi Cuenta -->
+    <section id="profile" class="d-none container py-5">
+      <div class="wrapper">
+        <h2 class="text-gold mb-4 text-center">¡Bienvenid@ a tu espacio personal, <span id="user-welcome">Jugador</span>!</h2>
+
+        <!-- Pestañas de la cuenta -->
+        <ul class="nav nav-tabs justify-content-center mb-4" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#tab-info">Información</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-account">Gestión de Cuenta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-characters">Gestión de Personajes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#shop-tab" href="#shop-tab">
+              Tienda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-help">Ayuda</a>
+          </li>
+        </ul>
+        <!-- Contenido de cada pestaña -->
+        <div class="tab-content">
+          <!-- Información -->
+          <div id="tab-info" class="tab-pane fade show active">
+            <!-- Datos de la Cuenta -->
+            <div class="info-block p-3 mb-4">
+              <h3 class="text-gold text-center">Datos de la Cuenta</h3>
+              <p><strong>Fecha de registro:</strong> <span id="register-date">Desconocido</span></p>
+              <p><strong>Último ingreso:</strong> <span id="last-login">Desconocido</span></p>
+              <p><strong>Correo registrado:</strong> <span id="user-email">correo@dominio.com</span></p>
+              <p><strong>Estado de la cuenta:</strong> <span id="account-status">Activo</span></p>
+            </div>
+
+            <!-- Personajes -->
+            <div class="character-block p-3">
+              <h3 class="text-gold text-center">Personajes</h3>
+              <div id="character-list" class="row g-3">
+                <!-- Cada personaje será un bloque dinámico -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Opciones de Cuenta -->
+          <div id="tab-account" class="tab-pane fade">
+            <!-- Mostrar saldo de usuario -->
+            <div id="balance-display" class="mb-3 text-light">
+              <p>Saldo PD: <span class="pd-balance">0</span></p>
+              <p>Saldo PV: <span class="pv-balance">0</span></p>
+            </div>
+            <p class="text-center">Gestiona tu cuenta aquí.</p>
+            <div class="row gx-4 gy-3"> 
+              <!-- Columna izquierda -->
+              <div class="col-md-6">
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/INV_Misc_Key_04.png" alt="misc_key" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Cambiar Contraseña</h5>
+                    <p class="text">Aquí va la descripción breve de este paso.</p>
+                  </div>
+                </div>
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/INV_Misc_Coin_02.png" alt="misc_coin" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Recargar PD</h5>
+                    <p class="text">Descripción breve de recarga de puntos de donación.</p>
+                  </div>
+                </div>
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/Spell_Frost_Stun.png" alt="stun" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Canjea PV por PD</h5>
+                    <p class="text">Descripción breve de canje de puntos de votación.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna derecha -->
+              <div class="col-md-6">
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/Spell_Shadow_ShadowPact.png" alt="shadowpact" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Reclutar a un Amigo</h5>
+                    <p class="text">Breve explicación del programa de reclutamiento.</p>
+                  </div>
+                </div>
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/INV_Banner_03.png" alt="banner" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Vota por Nosotros</h5>
+                    <p class="text">Explica cómo votar y ganar PV.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Opciones de Personaje -->
+          <div id="tab-characters" class="tab-pane fade">
+            <!-- Mostrar saldo de usuario -->
+            <div id="balance-display" class="mb-3 text-light">
+              <p>Saldo PD: <span class="pd-balance">0</span></p>
+              <p>Saldo PV: <span class="pv-balance">0</span></p>
+            </div>
+            <p class="text-center">Selecciona uno de tus personajes para continuar</p>
+            <!-- Selector de personaje en Opciones -->
+            <div id="character-selector-options" class="mb-3">
+              <select id="char-select-options" class="form-select" required>
+                <option value="" disabled selected hidden>-- Selecciona uno --</option>
+              </select>
+            </div>
+            <!-- Aquí va la mini-tarjeta -->
+            <div id="selected-character-card" class="mt-3"></div>
+            <div class="row gx-4 gy-3">
+              <!-- Columna izquierda -->
+              <div class="col-md-6">
+                <!-- Cambiar Nombre -->
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/Spell_Nature_Reincarnation.png" alt="reincarnation" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Cambiar Nombre</h5>
+                    <p class="text">Descripción breve de cómo cambiar el nombre.</p>
+                  </div>
+                </div>
+                <!-- Cambiar Facción -->
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/FactionChange.png" alt="factionchange" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Cambiar Facción</h5>
+                    <p class="text">Explica el proceso de cambio de facción.</p>
+                  </div>
+                </div>
+                <!-- Subir a Nivel 80 -->
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/Achievement_Level_80.png" alt="level80" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Subir a Nivel 80</h5>
+                    <p class="text">Detalles sobre cómo subir al nivel máximo.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna derecha -->
+              <div class="col-md-6">
+                <!-- Revivir Personaje -->
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/Ability_FiegnDead.png" alt="fiegndead" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Revivir Personaje</h5>
+                    <p class="text">Instrucciones para revivir al personaje.</p>
+                  </div>
+                </div>
+                <!-- Adquirir Oro -->
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/INV_Misc_Coin_01.png" alt="coin01" class="icon-img">
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Adquirir Oro</h5>
+                    <p class="text">Cómo obtener oro extra.</p>
+                  </div>
+                </div>
+                <!-- Enviar Regalo -->
+                <div class="account-item d-flex align-items-start">
+                  <div class="icon me-3">
+                    <img src="assets/icons/INV_Misc_Gift_01.png" alt="miscgift" class="icon-img">                    
+                  </div>
+                  <div class="text">
+                    <h5 class="mb-1">Enviar Regalo</h5>
+                    <p class="text">Proceso para enviar regalos a otros.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TIENDA -->
+          <div class="tab-pane fade" id="shop-tab">
+            <!-- Mostrar saldo de usuario -->
+            <div id="balance-display" class="mb-3 text-light">
+              <p>Saldo PD: <span class="pd-balance">0</span></p>
+              <p>Saldo PV: <span class="pv-balance">0</span></p>
+            </div>
+            <p id="shop-message" class="text-center">
+              Selecciona uno de tus personajes para continuar
+            </p>
+            <!-- Selector de personaje en Tienda -->
+            <div id="character-selector-shop" class="mb-3">
+              <select id="char-select-shop" class="form-select" required>
+                <option value="" disabled selected hidden>-- Selecciona uno --</option>
+              </select>
+            </div>
+            <!-- Aquí insertamos la mini-tarjeta en Tienda -->
+            <div id="selected-shop-character-card" class="mt-3"></div>
+
+            <h3 class="text-center">Tienda de <span id="shop-character-name"></span></h3>
+            <p id="shop-message" class="text-center">
+              Selecciona una categoría para comenzar a cotizar
+            </p>
+
+            <!-- 2.1 Menú de categorías principales -->
+            <ul id="shop-categories" class="nav nav-pills justify-content-center mb-3">
+              <li class="nav-item"><button class="nav-link active" data-cat="Armas">Armas</button></li>
+              <li class="nav-item"><button class="nav-link" data-cat="Set de Armaduras">Armaduras</button></li>
+              <li class="nav-item"><button class="nav-link" data-cat="Accesorios">Accesorios</button></li>
+              <li class="nav-item"><button class="nav-link" data-cat="Contenedores">Contenedores</button></li>
+              <li class="nav-item"><button class="nav-link" data-cat="Monturas">Monturas</button></li>
+            </ul>
+
+            <!-- 2.2 Menú de subcategorías -->
+            <ul id="shop-subcategories" class="nav nav-pills justify-content-center mb-3"></ul>
+            <!-- 2.2.1 Menú de tamaño de arma (level 3) -->
+            <ul id="shop-typesize" class="nav nav-pills justify-content-center mb-3"></ul>
+            <!-- 2.2.2 Menú de tipo concreto (level 4) -->
+            <ul id="shop-type" class="nav nav-pills justify-content-center mb-3"></ul>
+            <!-- 2.3 Lista de productos -->
+            <div id="product-list" class="row justify-content-center"></div>
+            <!-- 2.4 Carrito de compras -->
+            <div id="cart-section" class="mt-5">
+              <h4>Tu Carrito</h4>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-body">
+                  <!-- Se inyectarán las filas desde renderCart() -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th colspan="3" class="text-end">Total:</th>
+                    <th id="cart-total">0 PD</th>
+                    <th>
+                      <button id="checkout-btn" class="btn btn-primary btn-sm">Comprar</button>
+                    </th>
+                  </tr>
+                </tfoot>
+              </table> 
+            </div>
+            <!-- FIN TIENDA -->
+          </div>
+          <!-- Ayuda -->
+          <div id="tab-help" class="tab-pane fade">
+            <p class="text-center">¿Necesitas asistencia?</p>
+            <ul class="list-unstyled text-center">
+              <li><a href="https://discord.gg" target="_blank" class="text-gold">Únete al Discord</a></li>
+              <li><a href="#faq" class="text-gold">Ver FAQ</a></li>
+              <li><a href="#support" class="text-gold">Contacto con el equipo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ————— Módulo de tooltips ————— -->
+  <script src="js/tooltip.js" defer></script>
+  <!-- Scripts JS -->
+  <script src="js/scripts.js" defer></script>
+  <!-- Wowhead tooltips -->
+  <script src="https://wow.zamimg.com/widgets/power.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "Armas": {
+    "PVE": {
+      "Armas de una Mano": ["Dagas", "Armas de Puño", "Hachas", "Mazas", "Espadas"],
+      "Armas de dos Manos": ["Armas de Asta", "Bastones", "Hachas", "Mazas", "Espadas"],
+      "Armas a Distancia": ["Arcos", "Ballestas", "Armas de Fuego", "Arrojadizas", "Varitas"]
+    },
+    "PVP": {
+      "Armas de una Mano": ["Dagas", "Armas de Puño", "Hachas", "Mazas", "Espadas"],
+      "Armas de dos Manos": ["Armas de Asta", "Bastones", "Hachas", "Mazas", "Espadas"],
+      "Armas a Distancia": ["Arcos", "Ballestas", "Armas de Fuego", "Arrojadizas", "Varitas"]
+    }
+  },
+  "Set de Armaduras": {
+    "PVE": {
+      "Brujo":             [""],
+      "Caballero de la Muerte": {
+        "DPS Melee": [""],
+        "Tanque": [""]
+      },
+      "Cazador":           [""],
+      "Chamán": {
+        "DPS Melee":    [""],
+        "DPS Caster": [""],
+        "Sanación": [""]
+      },
+      "Druida": {
+        "DPS Melee":    [""],
+        "DPS Caster": [""],
+        "Sanación": [""]
+      },
+      "Guerrero": {
+        "DPS Melee": [""],
+        "Tanque": [""]
+      },
+      "Mago":              [""],
+      "Paladín": {
+        "DPS Melee":    [""],
+        "Tanque": [""],
+        "Sanación": [""]
+      },
+      "Pícaro":            [""],
+      "Sacerdote": {
+        "DPS Caster":    [""],
+        "Sanación": [""]
+      }
+    },
+    "PVP": {
+      "Brujo":             [""],
+      "Caballero de la Muerte": [""],
+      "Cazador":           [""],
+      "Chamán": {
+        "DPS Melee":    [""],
+        "DPS Caster": [""],
+        "Sanación": [""]
+      },
+      "Druida": {
+        "DPS Melee":    [""],
+        "DPS Caster": [""],
+        "Sanación": [""]
+      },
+      "Guerrero":           [""],
+      "Mago":              [""],
+      "Paladín": {
+        "DPS Melee":    [""],
+        "Sanación": [""]
+      },
+      "Pícaro":            [""],
+      "Sacerdote": {
+        "DPS Caster":    [""],
+        "Sanación": [""]
+      }
+    }
+  },
+  "Accesorios": [
+    "Collares", "Anillos", "Capa"
+  ],
+  "Contenedores": [
+    "Bolsas", "Cofres"
+  ],
+  "Monturas": [
+    "Terrestres", "Voladoras"
+  ]
+}
