@@ -169,7 +169,8 @@ app.get('/api/login/start', async (req, res) => {
       database: 'auth'
     });
     const [rows] = await connAuth.execute(
-      'SELECT HEX(salt) AS salt_hex, HEX(verifier) AS verifier_hex FROM account WHERE username = ?;',
+      'SELECT HEX(salt) AS salt_hex, HEX(verifier) AS verifier_hex ' +
+      'FROM account WHERE username = ?;',
       [username]
     );
     await connAuth.end();
@@ -181,8 +182,8 @@ app.get('/api/login/start', async (req, res) => {
     const server = new jsrp.server();
     // Inicializar con parámetros de WoW (hash: SHA-1, N y g estándar)
     server.init({
-      salt:      rows[0].salt_hex,      // salt en hex
-      verifier:  rows[0].verifier_hex,  // verifier en hex
+      salt:      rows[0].salt_hex,      // <-- ya viene en hex
+      verifier:  rows[0].verifier_hex,  // <-- ya viene en hex
       hash:      'SHA-1',
       // N y g por defecto en jsrp (compatibles con WoW)
     });
