@@ -204,7 +204,38 @@ app.get('/api/login/start', async (req, res) => {
     return res.status(500).json({ error: 'Error interno al iniciar login' });
   }
 });
+// Endpoint para finalizar SRP en login
+app.post('/api/login/finish', async (req, res) => {
+  const { username, A, M1 } = req.body || {};
+  if (!username || !A || !M1) {
+    return res.status(400).json({ error: 'Faltan parámetros SRP' });
+  }
+  const user = username.toUpperCase();
+  try {
+    // 1) Buscar la instancia de servidor guardada en srpServers
+    const server = srpServers[user];
+    if (!server) {
+      return res.status(400).json({ error: 'Sesión SRP no encontrada' });
+    }
 
+    // 2) Poner A y M1 en la instancia de servidor para verificar
+    server.setClientPublicKey(A);
+    const isValid = server.checkClientProof(M1); // true o false
+    if (!isValid) {
+      return res.status(401).json({ error: 'Prueba del cliente inválida' });
+    }
+
+    // 3) Obtener M2 (la prueba del servidor)
+    const M2 = server.getProof();
+
+    // 4) (Opcional) Aquí podrías generar un token de sesión o cookie
+    //    pero por ahora devolvemos solo M2.
+    return res.json({ M2: M2 });
+  } catch (err) {
+    console.error('Error en /api/login/finish:', err);
+    return res.status(500).json({ error: 'Error interno al finalizar login' });
+  }
+});
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
