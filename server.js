@@ -169,11 +169,10 @@ app.get('/api/login/start', async (req, res) => {
       database: 'auth'
     });
     const [rows] = await connAuth.execute(
-      'SELECT salt, verifier FROM account WHERE username = ?;',
+      'SELECT HEX(salt) AS salt_hex, HEX(verifier) AS verifier_hex FROM account WHERE username = ?;',
       [username]
     );
     await connAuth.end();
-
     if (rows.length === 0) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
@@ -182,10 +181,10 @@ app.get('/api/login/start', async (req, res) => {
     const server = new jsrp.server();
     // Inicializar con parámetros de WoW (hash: SHA-1, N y g estándar)
     server.init({
-      salt:      rows[0].salt.toString('hex'),      // salt en hex
-      verifier:  rows[0].verifier.toString('hex'),  // verifier en hex
+      salt:      rows[0].salt_hex,      // salt en hex
+      verifier:  rows[0].verifier_hex,  // verifier en hex
       hash:      'SHA-1',
-      // N y g por defecto en jsrp (mismos que usa WoW)
+      // N y g por defecto en jsrp (compatibles con WoW)
     });
 
     // 3) Obtener valor público B
