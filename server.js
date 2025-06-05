@@ -196,7 +196,7 @@ app.get('/api/login/start', async (req, res) => {
 
     // 5) Responder con salt y B
     return res.json({
-      salt: rows[0].salt.toString('hex'),
+      salt: rows[0].salt_hex,  // el hex que MySQL ya nos produjo
       B: B
     });
   } catch (err) {
