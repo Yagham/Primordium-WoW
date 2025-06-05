@@ -201,7 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // 3) Primera fase SRP: solicitar salt y B al servidor
-                const startRes = await fetch(`/api/login/start?username=${encodeURIComponent(username)}`);
+                const startRes = await fetch(
+                    `/api/login/start?username=${encodeURIComponent(username)}`
+                    );
                 if (!startRes.ok) {
                     const err = await startRes.json();
                     alert(err.error || 'Error inicial login');
@@ -217,14 +219,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     salt: salt,
                     serverB: B,
                     hash: 'SHA-1'
-                    // jsrp usa los valores por defecto de N y g (compatibles con WoW)
                 });
 
-                // 5) Obtener A (funciona internamente en init()) y M1 (prueba del cliente)
-                const A = client.getPublicKey();       // hex string
-                const M1 = client.getProof();          // hex string
+                // 5) Obtener A y M1
+                const A = client.getPublicKey();
+                const M1 = client.getProof();
 
-                // 6) Segunda fase SRP: enviar M1 y A al servidor para validar
+                // 6) Segunda fase SRP: enviar M1 y A al servidor
                 const finishRes = await fetch('/api/login/finish', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -234,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         M1: M1
                     })
                 });
-                if (!finishRes.ok) {
+                    if (!finishRes.ok) {
                     const err2 = await finishRes.json();
                     alert(err2.error || 'Error al validar login');
                     return;
@@ -242,13 +243,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const { M2 } = await finishRes.json();
 
                 // 7) Verificar M2 en el cliente
-                const valid = client.checkServerProof(M2);  // true o false
+                const valid = client.checkServerProof(M2);
                 if (!valid) {
                     alert('Error de verificación SRP.');
                     return;
                 }
 
-                // 8) Si llegamos hasta aquí, login exitoso
+                // 8) Login exitoso
                 alert('¡Inicio de sesión exitoso!');
                 localStorage.setItem('loggedInUser', username);
                 document.getElementById('nav-username').textContent = username;
@@ -264,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
     // —————— Actualizar la información de la cuenta ——————
     function populateProfileData() {
     // 1) Datos simulados; en futuro vendrán de API
