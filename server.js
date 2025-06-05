@@ -182,8 +182,8 @@ app.get('/api/login/start', async (req, res) => {
     const server = new jsrp.server();
     // Inicializar con parámetros de WoW (hash: SHA-1, N y g estándar)
     server.init({
-      salt:      rows[0].salt_hex,      // <-- ya viene en hex
-      verifier:  rows[0].verifier_hex,  // <-- ya viene en hex
+      salt:      rows[0].salt_hex,      // usar el alias salt_hex
+      verifier:  rows[0].verifier_hex,  // usar el alias verifier_hex
       hash:      'SHA-1',
       // N y g por defecto en jsrp (compatibles con WoW)
     });
