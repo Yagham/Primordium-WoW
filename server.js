@@ -147,6 +147,64 @@ app.get('/api/characters', async (req, res) => {
   }
 });
 
+const jsrp = require('jsrp');
+
+// Objeto en memoria para guardar instancias SRP de servidor
+// Clave: username, Valor: instancia de jsrp.server
+const srpServers = {};
+
+// Endpoint para iniciar SRP en login
+app.get('/api/login/start', async (req, res) => {
+  const username = (req.query.username || '').toUpperCase();
+  if (!username) {
+    return res.status(400).json({ error: 'Falta el parámetro username' });
+  }
+
+  try {
+    // 1) Conectarse a auth para obtener salt y verifier
+    const connAuth = await mysql.createConnection({
+      host:     'localhost',
+      user:     'root',
+      password: 'Dani3269',
+      database: 'auth'
+    });
+    const [rows] = await connAuth.execute(
+      'SELECT salt, verifier FROM account WHERE username = ?;',
+      [username]
+    );
+    await connAuth.end();
+
+    if (rows.length === 0) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
+
+    // 2) Crear una nueva instancia SRP de servidor
+    const server = new jsrp.server();
+    // Inicializar con parámetros de WoW (hash: SHA-1, N y g estándar)
+    server.init({
+      salt:      rows[0].salt.toString('hex'),      // salt en hex
+      verifier:  rows[0].verifier.toString('hex'),  // verifier en hex
+      hash:      'SHA-1',
+      // N y g por defecto en jsrp (mismos que usa WoW)
+    });
+
+    // 3) Obtener valor público B
+    const B = server.getPublicKey(); // hex string
+
+    // 4) Guardar instancia en memoria para este usuario
+    srpServers[username] = server;
+
+    // 5) Responder con salt y B
+    return res.json({
+      salt: rows[0].salt.toString('hex'),
+      B: B
+    });
+  } catch (err) {
+    console.error('Error en /api/login/start:', err);
+    return res.status(500).json({ error: 'Error interno al iniciar login' });
+  }
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
