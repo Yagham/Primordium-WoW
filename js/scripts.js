@@ -842,7 +842,7 @@ document.getElementById('checkout-btn').addEventListener('click', async () => {
 
 async function fetchServerStatus() {
     try {
-    const res = await fetch('/api/server-status.json');
+    const res = await fetch('/api/estado-servidor');
     const data = await res.json();
     document.getElementById('status-indicator')
         .className = `status-dot ${data.status}`;
