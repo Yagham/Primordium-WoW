@@ -849,7 +849,7 @@ async function fetchServerStatus() {
     document.getElementById('status-text')
         .textContent = data.status === 'online' ? 'En línea' : 'Desconectado';
     document.getElementById('players-info')
-        .textContent = `Jugadores: ${data.players} / ${data.maxPlayers}`;
+        .textContent = `Jugadores en línea: ${data.players}`;
     document.getElementById('uptime-info')
         .textContent = `Uptime: ${data.uptime}`;
     } catch (e) {
