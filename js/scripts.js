@@ -182,52 +182,87 @@ document.addEventListener('DOMContentLoaded', () => {
         showSection('login'); // Vuelve al login después de registrar
     });
     }    
-    // —————— 3. Validación del formulario “Login” ——————
+    // —————— 3. Manejo del formulario “Login” usando SRP ——————
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
-    loginForm.addEventListener('submit', e => {
-        e.preventDefault();
-        e.stopPropagation();
+        loginForm.addEventListener('submit', async e => {
+            e.preventDefault();
+            e.stopPropagation();
 
-        // 1) Validación de campos
-        if (!loginForm.checkValidity()) {
-        loginForm.classList.add('was-validated');
-        return;
-        }
+            // 1) Validación de campos HTML5
+            if (!loginForm.checkValidity()) {
+                loginForm.classList.add('was-validated');
+                return;
+            }
 
-        // 2) Capturamos el usuario y la contraseña ingresados
-        const username = document.getElementById('login-identifier').value;
-        const password = document.getElementById('login-password').value;
+            // 2) Obtenemos usuario/contraseña
+            const username = document.getElementById('login-identifier').value.toUpperCase();
+            const password = document.getElementById('login-password').value;
 
-        // 3) Verificamos si el usuario existe en localStorage
-        const storedUser = localStorage.getItem(`user_${username}`);
+            try {
+                // 3) Primera fase SRP: solicitar salt y B al servidor
+                const startRes = await fetch(`/api/login/start?username=${encodeURIComponent(username)}`);
+                if (!startRes.ok) {
+                    const err = await startRes.json();
+                    alert(err.error || 'Error inicial login');
+                    return;
+                }
+                const { salt, B } = await startRes.json();
 
-        if (storedUser) {
-        const user = JSON.parse(storedUser);
+                // 4) Inicializar instancia SRP en el cliente
+                const client = new jsrp.client();
+                client.init({
+                    username: username,
+                    password: password,
+                    salt: salt,
+                    serverB: B,
+                    hash: 'SHA-1'
+                    // jsrp usa los valores por defecto de N y g (compatibles con WoW)
+                });
 
-        // 4) Comparamos la contraseña
-        if (user.password === password) {
-            alert('¡Inicio de sesión exitoso!');
+                // 5) Obtener A (funciona internamente en init()) y M1 (prueba del cliente)
+                const A = client.getPublicKey();       // hex string
+                const M1 = client.getProof();          // hex string
 
-            // 5) Guardar el estado de sesión
-            localStorage.setItem('loggedInUser', username);
-            populateProfileData();
+                // 6) Segunda fase SRP: enviar M1 y A al servidor para validar
+                const finishRes = await fetch('/api/login/finish', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: username,
+                        A: A,
+                        M1: M1
+                    })
+                });
+                if (!finishRes.ok) {
+                    const err2 = await finishRes.json();
+                    alert(err2.error || 'Error al validar login');
+                    return;
+                }
+                const { M2 } = await finishRes.json();
 
-            // 6) Actualizamos el navbar y el perfil
-            document.getElementById('nav-username').textContent = username;
-            document.getElementById('user-welcome').textContent = username;
-            document.getElementById('nav-login-item').classList.add('d-none');
-            document.getElementById('nav-user-item').classList.remove('d-none');
+                // 7) Verificar M2 en el cliente
+                const valid = client.checkServerProof(M2);  // true o false
+                if (!valid) {
+                    alert('Error de verificación SRP.');
+                    return;
+                }
 
-            // 7) Mostrar la sección de perfil
-            showSection('profile');
-        } else {
-            alert('Contraseña incorrecta.');
-        }
-        } else {
-        alert('Usuario no encontrado.');
-        }
-    });
+                // 8) Si llegamos hasta aquí, login exitoso
+                alert('¡Inicio de sesión exitoso!');
+                localStorage.setItem('loggedInUser', username);
+                document.getElementById('nav-username').textContent = username;
+                document.getElementById('user-welcome').textContent = username;
+                document.getElementById('nav-login-item').classList.add('d-none');
+                document.getElementById('nav-user-item').classList.remove('d-none');
+                populateProfileData();
+                showSection('profile');
+
+            } catch (err) {
+                console.error('Error en login SRP:', err);
+                alert('Error interno al intentar iniciar sesión');
+            }
+        });
     }
     // —————— Actualizar la información de la cuenta ——————
     function populateProfileData() {
